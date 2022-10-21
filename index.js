@@ -16,7 +16,7 @@ for(let i of companyArr){
 
 for(let i of productArr){
     while(true){
-        let rand = Math.floor((Math.random() * assetArr.toString().length+1) % assetArr.length);
+        let rand = Math.floor((Math.random() * Math.pow(10, (assetArr.length).toString().length)) % assetArr.length);
         if(assetArr[rand].cmpy_code === i.cmpy_code) {
             detailArr = [...detailArr, ...getDetail(i.name, i.cmpy_code, i.prdt_code, assetArr[rand].asst_code)]
             break;
