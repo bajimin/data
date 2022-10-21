@@ -31,19 +31,24 @@ export function getProduct(cmpy_code, phone){
 
 // 상품 이름 랜덤 선정
 function getRandomProductName(count){
-    const companyProduct = process.env.PRODUCT_NAME
-    let cProduct = companyProduct.slice(2, companyProduct.length-2).split("', '")
+    //상품 이름 배열
+    const productName = process.env.PRODUCT_NAME
+    let pName = productName.slice(2, productName.length-2).split("', '")
+
     let set = new Set();
     while(set.size < count){
-        let fRandom = Math.floor(Math.random() * 10 % cProduct.length);
-        set.add(cProduct[fRandom])
+        let fRandom = Math.floor(Math.random() * 10 % pName.length);
+        set.add(pName[fRandom])
     }
     return [...set]
 }
 
+// 랜덤 원산지
 function getRandomFrom(count){    
+    //원산지 배열
     const productFrom = process.env.PRODUCT_FROM
     let pFrom = productFrom.slice(2, productFrom.length-2).split("', '")
+
     let arr = new Array();
     while(arr.length < count){
         arr.push(pFrom[Math.floor(Math.random()*10%pFrom.length)])

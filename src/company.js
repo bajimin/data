@@ -1,6 +1,3 @@
-import dotenv from "dotenv"
-dotenv.config();
-
 class Company {
     constructor(cmpy_code, cmpy_type, bn_no, name, address, ceo, phone){
         this.cmpy_code = cmpy_code
@@ -38,14 +35,12 @@ export function getCompany() {
 
 // 회사 이름 가져오기
 function getCompanyName(){
-    let arr = []
     const companyName = process.env.COMPANY_NAME
     return companyName.slice(2, companyName.length-2).split("', '")
 }
 
 // 회사 주소
 function getCompanyAddress(){
-    let arr = []
     const companyAddress = process.env.COMPANY_ADDRESS
     return companyAddress.slice(2, companyAddress.length-2).split("', '")
 }

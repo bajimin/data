@@ -38,12 +38,3 @@ function getRandomAssetType(count){
     }
     return arr
 }
-
-// 에셋
-// {
-//     "asst_code": "as1",
-//     "asst_name": "asset01",
-//     "asst_type": "fish",
-//     "cmpy_code": "cp1",
-//     "device_id": "device3"
-// }

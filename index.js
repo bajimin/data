@@ -15,55 +15,17 @@ for(let i of companyArr){
 }
 
 for(let i of productArr){
-    while(true){
-        let rand = Math.floor((Math.random() * Math.pow(10, (assetArr.length).toString().length)) % assetArr.length);
-        if(assetArr[rand].cmpy_code === i.cmpy_code) {
-            detailArr = [...detailArr, ...getDetail(i.name, i.cmpy_code, i.prdt_code, assetArr[rand].asst_code)]
-            break;
-        }
-    }
+    // while(true){
+    //     let rand = Math.floor((Math.random() * Math.pow(10, (assetArr.length).toString().length)) % assetArr.length);
+    //     if(assetArr[rand].cmpy_code === i.cmpy_code) {
+    //         detailArr = [...detailArr, ...getDetail(i.name, i.cmpy_code, i.prdt_code, assetArr[rand].asst_code)]
+    //         break;
+    //     }
+    // }
+    //상품의 회사와 같은 창고만 필터
+    let filtedAsset = assetArr.filter((ele)=> ele.cmpy_code === i.cmpy_code);
+    let rand = Math.floor((Math.random() * Math.pow(10, (filtedAsset.length).toString().length)) % filtedAsset.length);
+    detailArr = [...detailArr, ...getDetail(i.name, i.cmpy_code, i.prdt_code, filtedAsset[rand].asst_code)]
 }
 
 console.log(detailArr)
-
-// export function getDetail(name, cmpy_code, prdt_code, asst_code){
-
-    //창고
-    // {
-    //     "asst_code": "as1",
-    //     "asst_name": "asset01",
-    //     "asst_type": "fish",
-    //     "cmpy_code": "cp1",
-    //     "device_id": "device3"
-    //   }
-
-    //회사
-    // {
-    //     "cmpy_code": "cp1",
-    //     "cmpy_type": "develop",
-    //     "bn_no": "111-333-2222",
-    //     "name": "smartm2m",
-    //     "address": "busan",
-    //     "ceo": "jyj",
-    //     "phone": "01000000000"
-    //   }
-
-    //상품
-    // {
-    //     prdt_code: 'pd7',
-    //     name: '고등어',
-    //     from_prdt: 'east sea',
-    //     cmpy_code: 'cp2',
-    //     phone: '010-2860-5445'
-    //   }
-
-    //디테일
-    // {
-    //     "name": "pd1",
-    //     "cmpy_code": "cp1",
-    //     "prdt_code": "01000000000",
-    //     "asst_code": "01000000000",
-    //     "prdt_id": "01000000000"
-    //   }
-
-    
