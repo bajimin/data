@@ -1,19 +1,24 @@
-import dotenv from "dotenv"
 import {getCompany} from './src/company.js';
 import {getAsset} from './src/asset.js';
 import {getProduct} from './src/product.js';
 import {getDetail} from './src/detail.js';
 
-dotenv.config();
+//회사 데이터
 let companyArr = getCompany()
+//창고 데이터
 let assetArr = []
+//상품 데이터
 let productArr = []
+//상품 디테일 데이터
 let detailArr = []
+
+//회사마다 창고랑 상품 생성
 for(let i of companyArr){
     assetArr = [...assetArr, ...getAsset(i.cmpy_code)];
     productArr = [...productArr, ...getProduct(i.cmpy_code, i.phone)];
 }
 
+//회사, 창고, 상품에 대한 디테일 생성
 for(let i of productArr){
     // while(true){
     //     let rand = Math.floor((Math.random() * Math.pow(10, (assetArr.length).toString().length)) % assetArr.length);

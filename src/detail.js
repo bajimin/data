@@ -8,6 +8,7 @@ class Detail {
     }
 }
 
+// 디테일 데이터 생성 함수
 // 상품이랑 무작위 창고랑 비교해서 회사가 같으면 해당 창고에 상품 N개 반환
 export function getDetail(name, cmpy_code, prdt_code, asst_code){
     let count = 0;    

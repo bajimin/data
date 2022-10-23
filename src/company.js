@@ -10,6 +10,7 @@ class Company {
     }
 }
 
+// 회사 데이터 생성 함수
 export function getCompany() {
     let count = 0;
     let createCount = process.env.COMPANY_GET_COUNT;

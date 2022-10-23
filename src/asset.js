@@ -8,6 +8,7 @@ class Asset {
     }
 }
 
+// 창고 데이터 생성 함수
 export function getAsset(cmpy_code){
     let count = 0;
     let createCount = process.env.ASSET_GET_COUNT;

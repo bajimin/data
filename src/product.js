@@ -8,6 +8,7 @@ class Product {
     }
 }
 
+// 상품 데이터 생성 함수
 export function getProduct(cmpy_code, phone){
     let count = 0;
     let createCount = process.env.PRODUCT_GET_COUNT;
@@ -55,12 +56,3 @@ function getRandomFrom(count){
     }
     return arr
 }
-
-// 상품
-// {
-//     "prdt_code": "pd1",
-//     "name": "shrimp",
-//     "from_prdt": "south sea",
-//     "cmpy_code": "cp1",
-//     "phone": "01000000000"
-//  }
